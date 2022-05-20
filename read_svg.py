@@ -28,11 +28,11 @@ def getLength(a, b):
 
 def bezier(points):
     points = np.array(points)
-    print(points)
+
     lines = []
 
-    for i in range(0, 100):
-        i /= 100
+    for i in range(0, 30):
+        i /= 30
         x = getOper(points[:,0], i)
         y = getOper(points[:,1], i)
         lines.append((x, y))
@@ -118,7 +118,7 @@ def showPoints(points, imgPath, fileName):
     ax.set_axis_off()
     
     ax.scatter(points[:,0], points[:,1], s = 0.5, color = "b")
-    fig.set_figwidth((h / fig.dpi) + (2.16 * 1.3))
+    fig.set_figwidth((h / fig.dpi) + (2.09 * 1.3))
     fig.set_figheight((w / fig.dpi) + (2.16 * 1.3))
 
     ax.invert_yaxis()
