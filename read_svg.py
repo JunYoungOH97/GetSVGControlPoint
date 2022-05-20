@@ -26,13 +26,13 @@ def getLength(a, b):
 
     return math.sqrt((x1 - x2) ** 2 + (y1 - y2) ** 2)
 
-def bezier(points):
+def bezier(points, length):
     points = np.array(points)
 
     lines = []
 
-    for i in range(0, 30):
-        i /= 30
+    for i in range(0, int(length)):
+        i /= int(length)
         x = getOper(points[:,0], i)
         y = getOper(points[:,1], i)
         lines.append((x, y))
@@ -60,7 +60,7 @@ def getPoint(paths):
 
                         points.append([float(x_), float(y_)])
 
-                    points = bezier(points)
+                    points = bezier(points, pp.length())
                     xy += points
                         
                 except:
